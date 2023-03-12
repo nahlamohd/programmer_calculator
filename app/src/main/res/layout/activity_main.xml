@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:padding="@dimen/normalPadding"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView_result"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:gravity="right"
+        android:padding="@dimen/normalPadding"
+        android:maxLength="16"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="@dimen/largeText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_result">
+
+        <LinearLayout
+            android:id="@+id/hex_linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_result"
+            android:paddingEnd="@dimen/normalPadding"
+            android:paddingStart="@dimen/normalPadding">
+
+            <RadioButton
+                android:id="@+id/radioButton_hex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="@dimen/mediumPadding"
+                android:text="@string/hexadecimal"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSizeSmall"
+                app:layout_constraintEnd_toStartOf="@id/textView_hex"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/textView_hex"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/zero"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSizeSmall"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/radioButton_hex"
+                app:layout_constraintTop_toTopOf="@+id/radioButton_hex" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/des_linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/hex_linearLayout"
+            android:paddingEnd="@dimen/normalPadding"
+            android:paddingStart="@dimen/normalPadding">
+
+            <RadioButton
+                android:id="@+id/radioButton_dec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="@dimen/mediumPadding"
+                android:text="@string/decimal"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSizeSmall"
+                app:layout_constraintEnd_toStartOf="@+id/textView_dec"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/textView_dec"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/zero"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSizeSmall"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/radioButton_dec"
+                app:layout_constraintTop_toTopOf="@+id/radioButton_dec" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/oct_linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/des_linearLayout"
+            android:paddingEnd="@dimen/normalPadding"
+            android:paddingStart="@dimen/normalPadding">
+
+            <RadioButton
+                android:id="@+id/radioButton_oct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="@dimen/mediumPadding"
+                android:text="@string/octal"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSizeSmall"
+                app:layout_constraintEnd_toStartOf="@id/textView_oct"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/textView_oct"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/zero"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSizeSmall"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/radioButton_oct"
+                app:layout_constraintTop_toTopOf="@+id/radioButton_oct" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/oct_linearLayout"
+            android:paddingEnd="@dimen/normalPadding"
+            android:paddingStart="@dimen/normalPadding">
+
+            <RadioButton
+                android:id="@+id/radioButton_bin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="@dimen/mediumPadding"
+                android:text="@string/binary"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSizeSmall"
+                app:layout_constraintEnd_toStartOf="@id/textView_bin"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/textView_bin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/zero"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSizeSmall"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/radioButton_bin"
+                app:layout_constraintTop_toTopOf="@+id/radioButton_bin" />
+        </LinearLayout>
+
+    </RadioGroup>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_d"
+        style="@style/CalculatorButton.Number"
+        android:layout_width="@dimen/buttonSize"
+        android:layout_height="@dimen/buttonSize"
+        android:layout_marginTop="@dimen/normalMargin"
+        android:text="D"
+        android:onClick="onClickNumber"
+        app:layout_constraintEnd_toStartOf="@+id/button_e"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_e"
+        style="@style/CalculatorButton.Number"
+        android:layout_width="@dimen/buttonSize"
+        android:layout_height="@dimen/buttonSize"
+        android:text="@string/e"
+        android:onClick="onClickNumber"
+        app:layout_constraintEnd_toStartOf="@+id/button_f"
+        app:layout_constraintStart_toEndOf="@+id/button_d"
+        app:layout_constraintTop_toTopOf="@+id/button_d" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_f"
+        style="@style/CalculatorButton.Number"
+        android:layout_width="@dimen/buttonSize"
+        android:layout_height="@dimen/buttonSize"
+        android:text="@string/f"
+        android:onClick="onClickNumber"
+        app:layout_constraintEnd_toStartOf="@+id/button_cl"
+        app:layout_constraintStart_toEndOf="@+id/button_e"
+        app:layout_constraintTop_toTopOf="@+id/button_e" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_cl"
+        style="@style/CalculatorButton.clear"
+        android:layout_width="@dimen/buttonSize"
+        android:layout_height="@dimen/buttonSize"
+        android:text="@string/del"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_f"
+        app:layout_constraintTop_toTopOf="@+id/button_f" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_c"
+        style="@style/CalculatorButton.Number"
+        android:layout_width="@dimen/buttonSize"
+        android:layout_height="@dimen/buttonSize"
+        android:layout_marginTop="@dimen/normalMargin"
+        android:text="@string/c"
+        android:onClick="onClickNumber"
+        app:layout_constraintEnd_toEndOf="@+id/button_d"
+        app:layout_constraintStart_toStartOf="@+id/button_d"
+        app:layout_constraintTop_toBottomOf="@+id/button_d" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_7"
+        style="@style/CalculatorButton.Number"
+        android:layout_width="@dimen/buttonSize"
+        android:layout_height="@dimen/buttonSize"
+        android:text="@string/seven"
+        android:onClick="onClickNumber"
+        app:layout_constraintEnd_toStartOf="@+id/button_e"
+        app:layout_constraintStart_toEndOf="@+id/button_e"
+        app:layout_constraintTop_toTopOf="@+id/button_c" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_8"
+        style="@style/CalculatorButton.Number"
+        android:layout_width="@dimen/buttonSize"
+        android:layout_height="@dimen/buttonSize"
+        android:text="@string/eight"
+        android:onClick="onClickNumber"
+        app:layout_constraintEnd_toEndOf="@+id/button_f"
+        app:layout_constraintStart_toStartOf="@+id/button_f"
+        app:layout_constraintTop_toTopOf="@+id/button_7" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_9"
+        style="@style/CalculatorButton.Number"
+        android:layout_width="@dimen/buttonSize"
+        android:layout_height="@dimen/buttonSize"
+        android:text="@string/nine"
+        android:onClick="onClickNumber"
+        app:layout_constraintEnd_toEndOf="@+id/button_cl"
+        app:layout_constraintStart_toStartOf="@+id/button_cl"
+        app:layout_constraintTop_toTopOf="@+id/button_8" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_b"
+        style="@style/CalculatorButton.Number"
+        android:layout_width="@dimen/buttonSize"
+        android:layout_height="@dimen/buttonSize"
+        android:layout_marginTop="@dimen/normalMargin"
+        android:text="@string/b"
+        android:onClick="onClickNumber"
+        app:layout_constraintEnd_toEndOf="@+id/button_c"
+        app:layout_constraintStart_toStartOf="@+id/button_c"
+        app:layout_constraintTop_toBottomOf="@+id/button_c" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_4"
+        style="@style/CalculatorButton.Number"
+        android:layout_width="@dimen/buttonSize"
+        android:layout_height="@dimen/buttonSize"
+        android:text="@string/four"
+        android:onClick="onClickNumber"
+        app:layout_constraintEnd_toEndOf="@+id/button_7"
+        app:layout_constraintStart_toStartOf="@+id/button_7"
+        app:layout_constraintTop_toTopOf="@+id/button_b" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_5"
+        style="@style/CalculatorButton.Number"
+        android:layout_width="@dimen/buttonSize"
+        android:layout_height="@dimen/buttonSize"
+        android:text="@string/five"
+        android:onClick="onClickNumber"
+        app:layout_constraintEnd_toEndOf="@+id/button_8"
+        app:layout_constraintStart_toStartOf="@+id/button_8"
+        app:layout_constraintTop_toTopOf="@+id/button_4" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_6"
+        style="@style/CalculatorButton.Number"
+        android:layout_width="@dimen/buttonSize"
+        android:layout_height="@dimen/buttonSize"
+        android:text="@string/six"
+        android:onClick="onClickNumber"
+        app:layout_constraintEnd_toEndOf="@+id/button_9"
+        app:layout_constraintStart_toStartOf="@+id/button_9"
+        app:layout_constraintTop_toTopOf="@+id/button_5" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_a"
+        style="@style/CalculatorButton.Number"
+        android:layout_width="@dimen/buttonSize"
+        android:layout_height="@dimen/buttonSize"
+        android:layout_marginTop="@dimen/normalMargin"
+        android:text="@string/a"
+        android:onClick="onClickNumber"
+        app:layout_constraintEnd_toEndOf="@+id/button_b"
+        app:layout_constraintStart_toStartOf="@+id/button_b"
+        app:layout_constraintTop_toBottomOf="@+id/button_b" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_1"
+        style="@style/CalculatorButton.Number"
+        android:layout_width="@dimen/buttonSize"
+        android:layout_height="@dimen/buttonSize"
+        android:text="@string/one"
+        android:onClick="onClickNumber"
+        app:layout_constraintEnd_toEndOf="@+id/button_4"
+        app:layout_constraintStart_toStartOf="@+id/button_4"
+        app:layout_constraintTop_toTopOf="@+id/button_a" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_2"
+        style="@style/CalculatorButton.Number"
+        android:layout_width="@dimen/buttonSize"
+        android:layout_height="@dimen/buttonSize"
+        android:text="@string/two"
+        android:onClick="onClickNumber"
+        app:layout_constraintEnd_toEndOf="@+id/button_5"
+        app:layout_constraintStart_toStartOf="@+id/button_5"
+        app:layout_constraintTop_toTopOf="@+id/button_1" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_3"
+        style="@style/CalculatorButton.Number"
+        android:layout_width="@dimen/buttonSize"
+        android:layout_height="@dimen/buttonSize"
+        android:text="@string/three"
+        android:onClick="onClickNumber"
+        app:layout_constraintEnd_toEndOf="@+id/button_6"
+        app:layout_constraintStart_toStartOf="@+id/button_6"
+        app:layout_constraintTop_toTopOf="@+id/button_2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_0"
+        style="@style/CalculatorButton.Number"
+        android:layout_width="@dimen/buttonSize"
+        android:layout_height="@dimen/buttonSize"
+        android:layout_marginTop="@dimen/normalMargin"
+        android:text="@string/zero"
+        android:onClick="onClickNumber"
+        app:layout_constraintEnd_toEndOf="@+id/button_1"
+        app:layout_constraintTop_toBottomOf="@+id/button_1" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_result"
+        style="@style/CalculatorButton.Result"
+        android:layout_width="156dp"
+        android:layout_height="64dp"
+        android:text="@string/result"
+        app:layout_constraintEnd_toEndOf="@+id/button_3"
+        app:layout_constraintStart_toStartOf="@+id/button_2"
+        app:layout_constraintTop_toTopOf="@+id/button_0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

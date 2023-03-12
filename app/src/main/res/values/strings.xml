@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Programmer Calc</string>
+    <string name="zero">0</string>
+    <string name="octal">OCT</string>
+    <string name="binary">BIN</string>
+    <string name="hexadecimal">HEX</string>
+    <string name="decimal">DEC</string>
+    <string name="e">E</string>
+    <string name="f">F</string>
+    <string name="del">Del</string>
+    <string name="c">C</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+    <string name="b">B</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="a">A</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="result">=</string>
+    <string name="four">4</string>
+</resources>
