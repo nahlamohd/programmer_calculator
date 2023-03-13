@@ -9,4 +9,8 @@
     <dimen name="mediumPadding">24dp</dimen>
     <dimen name="textSizeSmall">16sp</dimen>
     <dimen name="normalMargin">16dp</dimen>
+    <dimen name="textViewWidth">310dp</dimen>
+    <dimen name="textViewHeight">48dp</dimen>
+    <dimen name="layoutWidth">290dp</dimen>
+    <dimen name="layoutHeight">0dp</dimen>
 </resources>
