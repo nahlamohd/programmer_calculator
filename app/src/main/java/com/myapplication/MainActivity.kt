@@ -59,11 +59,11 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        binding.buttonDel.setOnClickListener {
+        binding.buttonDelete.setOnClickListener {
             var input = binding.textViewResult.text.toString()
             if (input == "0") input = ""
             input = if (input.length > 1)
-                input.dropLast(1)
+                input.substring(0, input.length-1)
             else "0"
             binding.textViewResult.text = input
             convertBetweenNumberSystems(input)
