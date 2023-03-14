@@ -307,7 +307,7 @@
             app:layout_constraintVertical_chainStyle="spread" />
 
         <TextView
-            android:id="@+id/textViewOct"
+            android:id="@+id/textViewDec"
             android:layout_width="match_parent"
             android:layout_height="@dimen/textViewHeight"
             android:gravity="center_vertical"
@@ -319,7 +319,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textViewDec" />
 
         <TextView
-            android:id="@+id/textViewDec"
+            android:id="@+id/textViewOct"
             android:layout_width="match_parent"
             android:layout_height="@dimen/textViewHeight"
             android:gravity="center_vertical"

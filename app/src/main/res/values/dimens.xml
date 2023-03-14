@@ -13,4 +13,5 @@
     <dimen name="textViewHeight">48dp</dimen>
     <dimen name="layoutWidth">290dp</dimen>
     <dimen name="layoutHeight">0dp</dimen>
+    <dimen name="resultTextHeight">88dp</dimen>
 </resources>
