@@ -11,7 +11,7 @@
     <TextView
         android:id="@+id/textView_result"
         android:layout_width="match_parent"
-        android:layout_height="88dp"
+        android:layout_height="@dimen/resultTextHeight"
         android:gravity="right"
         android:padding="@dimen/normalPadding"
         android:text=""
@@ -78,7 +78,7 @@
         app:layout_constraintEnd_toStartOf="@+id/button_e"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        app:layout_constraintTop_toBottomOf="@id/linearLayout" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_e"
@@ -98,21 +98,22 @@
         android:layout_height="@dimen/buttonSize"
         android:onClick="onClickNumber"
         android:text="@string/f"
-        app:layout_constraintEnd_toStartOf="@+id/button_cl"
+        app:layout_constraintEnd_toStartOf="@+id/button_del"
         app:layout_constraintStart_toEndOf="@+id/button_e"
         app:layout_constraintTop_toTopOf="@+id/button_e" />
 
 
     <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/button_cl"
+        android:id="@+id/button_del"
         style="@style/CalculatorButton.Number"
         android:layout_width="@dimen/buttonSize"
         android:layout_height="@dimen/buttonSize"
+        android:label=""
+        android:src="@drawable/baseline_backspace_24"
+        android:tint="@color/brand"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button_f"
-        app:layout_constraintTop_toTopOf="@+id/button_f"
-        android:src="@drawable/baseline_backspace_24"
-        android:tint="@color/brand"/>
+        app:layout_constraintTop_toTopOf="@+id/button_f" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_c"
@@ -123,7 +124,7 @@
         android:onClick="onClickNumber"
         android:text="@string/c"
         app:layout_constraintEnd_toEndOf="@+id/button_d"
-        app:layout_constraintStart_toStartOf="@+id/button_d"
+        app:layout_constraintStart_toStartOf="@id/button_d"
         app:layout_constraintTop_toBottomOf="@+id/button_d" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -133,8 +134,8 @@
         android:layout_height="@dimen/buttonSize"
         android:onClick="onClickNumber"
         android:text="@string/seven"
-        app:layout_constraintEnd_toStartOf="@+id/button_e"
-        app:layout_constraintStart_toEndOf="@+id/button_e"
+        app:layout_constraintEnd_toEndOf="@+id/button_e"
+        app:layout_constraintStart_toStartOf="@+id/button_e"
         app:layout_constraintTop_toTopOf="@+id/button_c" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -145,6 +146,7 @@
         android:onClick="onClickNumber"
         android:text="@string/eight"
         app:layout_constraintEnd_toEndOf="@+id/button_f"
+
         app:layout_constraintStart_toStartOf="@+id/button_f"
         app:layout_constraintTop_toTopOf="@+id/button_7" />
 
@@ -155,8 +157,8 @@
         android:layout_height="@dimen/buttonSize"
         android:onClick="onClickNumber"
         android:text="@string/nine"
-        app:layout_constraintEnd_toEndOf="@+id/button_cl"
-        app:layout_constraintStart_toStartOf="@+id/button_cl"
+        app:layout_constraintEnd_toEndOf="@id/button_del"
+        app:layout_constraintStart_toStartOf="@+id/button_del"
         app:layout_constraintTop_toTopOf="@+id/button_8" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -256,24 +258,21 @@
         android:layout_height="@dimen/buttonSize"
         android:onClick="onClickNumber"
         android:text="@string/zero"
-        app:layout_constraintStart_toStartOf="@+id/button_1"
         app:layout_constraintEnd_toEndOf="@+id/button_1"
-        app:layout_constraintTop_toTopOf="@+id/button_del"
-        />
+        app:layout_constraintStart_toStartOf="@+id/button_1"
+        app:layout_constraintTop_toTopOf="@+id/button_cl" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_del"
+        android:id="@+id/button_cl"
         style="@style/CalculatorButton.clear"
         android:layout_width="@dimen/buttonSize"
         android:layout_height="@dimen/buttonSize"
         android:layout_marginTop="@dimen/normalMargin"
-        android:layout_marginEnd="4dp"
-        android:text="@string/clear"
         android:onClick="onClickNumber"
+        android:text="@string/clear"
         app:layout_constraintEnd_toEndOf="@+id/button_a"
         app:layout_constraintStart_toStartOf="@+id/button_a"
-        app:layout_constraintTop_toBottomOf="@+id/button_a"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/button_a" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_result"
@@ -286,10 +285,11 @@
         app:layout_constraintTop_toTopOf="@+id/button_0" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="@dimen/layoutWidth"
-        android:layout_height="@dimen/layoutHeight"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@id/button_f"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/radioGroup"
         app:layout_constraintTop_toBottomOf="@id/textView_result">
 
@@ -297,8 +297,8 @@
             android:id="@+id/textViewHex"
             android:layout_width="match_parent"
             android:layout_height="@dimen/textViewHeight"
-            android:text=""
             android:gravity="center_vertical"
+            android:text=""
             android:textColor="@color/white"
             android:textSize="@dimen/textButton"
             app:layout_constraintBottom_toTopOf="@+id/textViewDec"
